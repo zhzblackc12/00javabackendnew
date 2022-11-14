@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sjg-data-backend
+spec:
+  selector:
+    matchLabels:
+      app: sjg-data-backend
+  template:
+    metadata:
+      labels:
+        app: sjg-data-backend
+    spec:
+      imagePullSecrets:
+        - name: dockerauth
+      containers:
+        - name: sjg-data-backend
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP

@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sjg-data-backend
+spec:
+  template:
+    spec:
+      containers:
+        - name: sjg-data-backend
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+            - name: SPRING_PROFILES_ACTIVE
+              value: staging
+            - name: TOMCAT_USERNAME
+              value: data
+            - name: TOMCAT_PASSWORD
+              value: data123

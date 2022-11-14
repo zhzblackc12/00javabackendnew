@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sjg-data-backend
+spec:
+  template:
+    spec:
+      nodeSelector:
+        eks.amazonaws.com/capacityType: SPOT
+      containers:
+        - name: sjg-data-backend
+          image: sjg-data-backend:latest
