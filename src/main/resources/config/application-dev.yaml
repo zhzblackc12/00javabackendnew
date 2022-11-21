@@ -1,10 +1,14 @@
 # 本地开发环境配置文件
+server:
+  port: 8080
+  servlet:
+    context-path: /gamedata
 spring:
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: "jdbc:mysql://127.0.0.1:3306/game?autoreconnect=true&useSSL=false"
-    username: "game"
-    password: "game123"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/game?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
     testOnBorrow: true
     testWhileIdle: true
     timeBetweenEvictionRunsMillis: 60000
@@ -14,8 +18,10 @@ spring:
     max-idle: 10
     max-wait: 8000
 
-flyway:
-  url: "jdbc:mysql://127.0.0.1:3306/game?autoreconnect=true&useSSL=false"
-  schemas: game
-  user: "game"
-  password: "game123"
+  flyway:
+    url: jdbc:mysql://127.0.0.1:3306/game?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    schemas: game
+    user: root
+    password: 123456
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml

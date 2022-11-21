@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjg.game.mapper.GameAreaMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sjg.game.entity.GameArea">
+        <id column="area_code" property="areaCode" />
+        <result column="parent_area_code" property="parentAreaCode" />
+        <result column="area_name" property="areaName" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        area_code, parent_area_code, area_name, created_at, updated_at
+    </sql>
+
+    <select id="getGameAreaAll" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List"/>
+        from game_area
+    </select>
+</mapper>

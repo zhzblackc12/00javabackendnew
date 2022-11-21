@@ -1,4 +1,8 @@
 # staging 环境配置文件
+server:
+  port: 8080
+  servlet:
+    context-path: /gamedata
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
@@ -13,9 +17,10 @@ spring:
     max-active: 15
     max-idle: 10
     max-wait: 8000
-
-flyway:
-  url: "jdbc:mysql://db-mysql-headless.db.svc.cluster.local:3306/game?autoreconnect=true&useSSL=false"
-  schemas: game
-  user: "game"
-  password: "game123"
+  flyway:
+    url: "jdbc:mysql://db-mysql-headless.db.svc.cluster.local:3306/game?autoreconnect=true&useSSL=false"
+    schemas: game
+    user: "game"
+    password: "game123"
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml
