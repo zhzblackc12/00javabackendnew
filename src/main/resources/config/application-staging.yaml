@@ -6,7 +6,7 @@ server:
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: "jdbc:mysql://db-mysql-headless.db.svc.cluster.local:3306/game?autoreconnect=true&useSSL=false"
+    url: "jdbc:mysql://db-mysql-headless.db.svc.cluster.local:3306/game?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8"
     username: "game"
     password: "game123"
     testOnBorrow: true
@@ -18,7 +18,7 @@ spring:
     max-idle: 10
     max-wait: 8000
   flyway:
-    url: "jdbc:mysql://db-mysql-headless.db.svc.cluster.local:3306/game?autoreconnect=true&useSSL=false"
+    url: "jdbc:mysql://db-mysql-headless.db.svc.cluster.local:3306/game?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8"
     schemas: game
     user: "game"
     password: "game123"
