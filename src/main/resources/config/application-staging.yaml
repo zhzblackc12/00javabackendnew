@@ -18,6 +18,8 @@ spring:
     max-idle: 10
     max-wait: 8000
   flyway:
+    baseline-on-migrate: true
+    enabled: true
     url: "jdbc:mysql://db-mysql-headless.db.svc.cluster.local:3306/game?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8"
     schemas: game
     user: "game"
