@@ -8,7 +8,7 @@
         <result column="area_code" property="areaCode" />
         <result column="nickname" property="nickname" />
         <result column="openid" property="openid" />
-        <result column="avator" property="avator" />
+        <result column="avatar" property="avatar" />
         <result column="phone" property="phone" />
         <result column="game_id" property="gameId" />
         <result column="device" property="device" />
@@ -18,7 +18,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, area_code, nickname, openid, avator, phone, game_id, device, created_at, updated_at
+        id, area_code, nickname, openid, avatar, phone, game_id, device, created_at, updated_at
     </sql>
 
     <select id="getUserByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -34,8 +34,8 @@
     </select>
 
     <insert id="insertGameUser" parameterType="com.sjg.game.entity.GameUser">
-        insert into game_user(id, area_code, nickname, openid, avator, phone, game_id, device, created_at, updated_at)
-        values(#{id},#{areaCode},#{nickname},#{openid},#{avator},#{phone},#{gameId},#{device},#{createdAt},#{updatedAt})
+        insert into game_user(id, area_code, nickname, openid, avatar, phone, game_id, device, created_at, updated_at)
+        values(#{id},#{areaCode},#{nickname},#{openid},#{avatar},#{phone},#{gameId},#{device},#{createdAt},#{updatedAt})
     </insert>
 
     <update id="updateGameUser" parameterType="com.sjg.game.entity.GameUser">
@@ -43,7 +43,7 @@
         <set>
             <if test="areaCode != null">area_code=#{areaCode},</if>
             <if test="nickname != null">nickname=#{nickname},</if>
-            <if test="avator != null">avator=#{avator},</if>
+            <if test="avatar != null">avatar=#{avatar},</if>
             <if test="phone != null">phone=#{phone},</if>
             <if test="gameId != null">game_id=#{gameId},</if>
             <if test="device != null">device=#{device},</if>

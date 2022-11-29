@@ -46,7 +46,7 @@ public class GameUser implements Serializable {
     /**
      * 头像图标
      */
-    private String avator;
+    private String avatar;
 
     /**
      * 微信注册联系电话
