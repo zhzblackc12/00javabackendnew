@@ -8,7 +8,7 @@ public class GamePersonalRank{
     private String gameId;
     private String userId;
     private String nickname;
-    private String avator;
+    private String avatar;
     private int score;
     private int rank;
 }
