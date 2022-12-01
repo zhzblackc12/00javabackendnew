@@ -17,7 +17,7 @@ public class GameScoreController {
 
     @PostMapping("/addUserGameScore")
     public long addUserGameScore(@RequestBody GameScore gameScore) {
-        return gameScoreServiceImpl.updateUserGameScore(gameScore);
+        return gameScoreServiceImpl.addUserGameScore(gameScore);
     }
 
     @PostMapping("/updateUserGameScore")
