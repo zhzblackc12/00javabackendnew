@@ -21,7 +21,8 @@ public class GameUserController {
 
     @GetMapping("/getUserByOpenId")
     public GameUser getUserByOpenId(String wxOpenId){
-        return gameUserServiceImpl.getUserByOpenId(wxOpenId);
+        GameUser gameUser=gameUserServiceImpl.getUserByOpenId(wxOpenId);
+        return gameUser;
     }
 
     @PostMapping("/insertGameUser")

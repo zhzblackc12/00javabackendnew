@@ -24,7 +24,7 @@
     <select id="getUserByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from game_user where openid=#{openId}
+        from game_user where openid=#{openId} limit 1
     </select>
 
     <select id="getUserById" parameterType="java.lang.String" resultMap="BaseResultMap">
