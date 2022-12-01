@@ -17,11 +17,13 @@ public class GameScoreController {
 
     @PostMapping("/addUserGameScore")
     public long addUserGameScore(@RequestBody GameScore gameScore) {
+
         return gameScoreServiceImpl.addUserGameScore(gameScore);
     }
 
     @PostMapping("/updateUserGameScore")
     public long updateUserGameScore(@RequestBody GameScore gameScore) {
+
         return gameScoreServiceImpl.updateUserGameScore(gameScore);
     }
 }
