@@ -16,7 +16,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, area_code, game_id, device, score, created_at
+        id, user_id, area_code, game_id, device, score,use_time,created_at
     </sql>
 
     <insert id="addUserGameScore" parameterType="com.sjg.game.entity.GameScore">

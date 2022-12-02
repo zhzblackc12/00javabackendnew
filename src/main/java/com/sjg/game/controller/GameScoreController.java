@@ -30,6 +30,7 @@ public class GameScoreController {
         gameScore.setGameId(gameId);
         gameScore.setAreaCode(areaCode);
         gameScore.setUserId(userId);
-        return  gameScoreServiceImpl.selectUserGameScore(gameScore);
+        GameScore gs=gameScoreServiceImpl.selectUserGameScore(gameScore);
+        return  gs;
     }
 }
