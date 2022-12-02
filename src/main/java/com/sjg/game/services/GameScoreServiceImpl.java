@@ -31,4 +31,8 @@ public class GameScoreServiceImpl {
     public long updateUserGameScore(GameScore gameScore) {
        return gameScoreMapper.updateUserGameScore(gameScore);
     }
+
+    public GameScore selectUserGameScore(GameScore gameScore){
+        return gameScoreMapper.selectUserGameScore(gameScore);
+    }
 }

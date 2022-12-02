@@ -34,4 +34,12 @@
         where user_id=#{userId} and area_code=#{areaCode} and game_id=#{gameId}
     </update>
 
+
+    <select id="selectUserGameScore" parameterType="com.sjg.game.entity.GameScore" resultType="com.sjg.game.entity.GameScore">
+        select
+            <include refid="Base_Column_List"/>
+        from game_score
+        where user_id=#{userId} and area_code=#{areaCode} and game_id=#{gameId} order by score desc limit 1
+    </select>
+
 </mapper>

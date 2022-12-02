@@ -17,4 +17,6 @@ public interface GameScoreMapper{
     long addUserGameScore(GameScore gameScore);
 
     long updateUserGameScore(GameScore gameScore);
+
+    GameScore selectUserGameScore(GameScore gameScore);
 }

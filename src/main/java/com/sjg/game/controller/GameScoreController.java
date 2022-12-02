@@ -3,10 +3,7 @@ package com.sjg.game.controller;
 import com.sjg.game.entity.GameScore;
 import com.sjg.game.services.GameScoreServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/gamescore")
@@ -25,5 +22,14 @@ public class GameScoreController {
     public long updateUserGameScore(@RequestBody GameScore gameScore) {
 
         return gameScoreServiceImpl.updateUserGameScore(gameScore);
+    }
+
+    @GetMapping("/selectUserGameScore")
+    public GameScore selectUserGameScore(String userId,String areaCode,String gameId){
+        GameScore gameScore=new GameScore();
+        gameScore.setGameId(gameId);
+        gameScore.setAreaCode(areaCode);
+        gameScore.setUserId(userId);
+        return  gameScoreServiceImpl.selectUserGameScore(gameScore);
     }
 }
