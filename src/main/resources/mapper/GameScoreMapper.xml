@@ -35,7 +35,7 @@
     </update>
 
 
-    <select id="selectUserGameScore" parameterType="com.sjg.game.entity.GameScore" resultType="com.sjg.game.entity.GameScore">
+    <select id="selectUserGameScore" parameterType="com.sjg.game.entity.GameScore" resultMap="BaseResultMap">
         select
             <include refid="Base_Column_List"/>
         from game_score
